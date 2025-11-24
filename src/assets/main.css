@@ -1,0 +1,98 @@
+/* src/main.css */
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Base font */
+* {
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Layout helpers */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Hero gradient */
+.hero-gradient {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+/* Floating animation for hero image */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Product card hover */
+.product-card {
+  will-change: transform;
+}
+.product-card:hover {
+  transform: translateY(-8px);
+  transition: transform 0.3s ease;
+}
+
+/* Feature icon interaction */
+.feature-icon {
+  transition: transform 0.3s ease;
+}
+.feature-card:hover .feature-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Small UI tweaks */
+.rounded-2xl { border-radius: 1rem; }
+.shadow-2xl { box-shadow: 0 25px 50px rgba(0,0,0,0.15); }
+
+/* Responsive image helper */
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Utility for visually hidden (accessibility) */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Form focus states (complement Tailwind) */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(16,185,129,0.12);
+  border-color: #059669;
+}
+
+/* Footer small screens spacing */
+@media (max-width: 768px) {
+  .footer-grid-stack {
+    display: grid;
+    gap: 1.25rem;
+  }
+}
+
+/* Minor color utilities (in case you need direct classes) */
+.text-green-600 { color: #16a34a; }
+.bg-green-600 { background-color: #16a34a; }
+.bg-green-700 { background-color: #15803d; }
